@@ -1,0 +1,3 @@
+- ```git branch`` lists names of local branches
+- ```git checkout <branch-name>``` switches to that branch, pulling it down from origin if needed
+- ```git log --pretty=format:"%h - %an, %ar : %s"```  ca82a6d - Scott Chacon, 6 years ago : changed the version number
