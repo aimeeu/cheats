@@ -3,7 +3,7 @@
 .. ===============LICENSE_START=======================================================
 .. Aimee Ukasick CC-BY-4.0
 .. ===================================================================================
-.. Copyright (C) Aimee Ukasick. All rights reserved.
+.. Copyright (C) 2019 Aimee Ukasick. All rights reserved.
 .. ===================================================================================
 .. This documentation file is distributed by Aimee Ukasick
 .. under the Creative Commons Attribution 4.0 International License (the "License");
