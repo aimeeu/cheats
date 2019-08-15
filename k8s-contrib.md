@@ -63,7 +63,7 @@ To github.com:aimeeu/website.git
 
 # Working locally
 
-1. **Always** update origin/master from upstream/master before creating a local working branch!! **Never** use git pull to do a merge because that creates a merge commit, which makes commit history messy.
+1. **Always** update origin/master from upstream/master before creating a local working branch!! **Never** use ```git pull``` to do a merge because that creates a merge commit, which makes commit history messy.
 1. Create a local working branch
     ```bash
     git checkout -b <branch-name>
