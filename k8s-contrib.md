@@ -87,4 +87,5 @@ To github.com:aimeeu/website.git
     ```bash
     git rebase -i HEAD~<number of commits>
     ```
+    - https://www.devroom.io/2011/07/05/git-squash-your-latests-commits-into-one/
     - https://git-scm.com/docs/git-rebase
