@@ -65,11 +65,14 @@ To github.com:aimeeu/website.git
 
 1. **Always** update origin/master from upstream/master before creating a local working branch!! **Never** use git pull to do a merge because that creates a merge commit, which makes commit history messy.
 1. Create a local working branch
-
     ```bash
     git checkout -b <branch-name>
     ```
-1. Makes changes, commit, and push
+1. Makes changes, test locally
+    ```bash
+    hugo serve
+    ```
+1. Commit and push
     ```bash
     git commit -as
     git push -f origin <branch-name>
