@@ -26,7 +26,7 @@
 ## Delete
 - ```git branch -d <branch_name>``` The -d option is an alias for --delete, which only deletes the branch if it has already been fully merged in its upstream branch
 - ``` git branch -D <branch_name>``` You could also use -D, which is an alias for --delete --force, which deletes the branch "irrespective of its merged status."
-```git push <remote_name> --delete <branch_name>``` to delete a remote branch
+- ```git push <remote_name> --delete <branch_name>``` to delete a remote branch
 
 # Log
 - ```git log --pretty=format:"%h - %an, %ar : %s"```  ca82a6d - Scott Chacon, 6 years ago : changed the version number
