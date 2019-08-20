@@ -110,3 +110,4 @@ To github.com:aimeeu/website.git
     ```
     - https://www.devroom.io/2011/07/05/git-squash-your-latests-commits-into-one/
     - https://git-scm.com/docs/git-rebase
+    Note: if you use ```git commit -a --amend```, only one commit will appear in the GitHub UI. So keep the commit message the same and just add line items for what was updated in each commit (the opposite of OpenStack etiquette).
