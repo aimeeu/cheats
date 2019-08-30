@@ -2,9 +2,23 @@
 
 https://kubernetes.io/docs/contribute/intermediate/#triage-and-categorize-issues
 https://github.com/kubernetes/community/blob/master/contributors/guide/issue-triage.md
+https://prow.k8s.io/command-help
+
+## Searching through code
+```
+jaypipes@udb42383a8e5155:~/src/k8s.io/website/content/en$ ack -l frontend | wc -l
+70
+jaypipes@udb42383a8e5155:~/src/k8s.io/website/content/en$ ack -l "front[ -]end" | wc -l
+15
+```
 
 ## Labels
+### Add
 /triage needs-information
+
+### Remove
+/remove-triage needs-informtion
+
 
 ## Support issues
 
