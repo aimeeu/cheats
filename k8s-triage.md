@@ -15,6 +15,8 @@ jaypipes@udb42383a8e5155:~/src/k8s.io/website/content/en$ ack -l "front[ -]end" 
 ## Labels
 ### Add
 /triage needs-information
+/priority backlog
+/kind feature
 
 ### Remove
 /remove-triage needs-informtion
