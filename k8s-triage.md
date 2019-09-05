@@ -21,6 +21,10 @@ jaypipes@udb42383a8e5155:~/src/k8s.io/website/content/en$ ack -l "front[ -]end" 
 ### Remove
 /remove-triage needs-informtion
 
+## Third-party content issues
+@<username> - thank you for bringing this to our attention! The Docs team is in the process of removing vendor-specific content, as well as links to vendor-specific content, from the Kubernetes documentation (see Issue #15748  and the [Content Guide](https://kubernetes.io/docs/contribute/style/content-guide/)). I've added the Turnkey section to #15748, so I'm going to close this issue.
+
+/close
 
 ## Support issues
 
