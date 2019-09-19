@@ -27,6 +27,17 @@
 - ```git branch -d <branch_name>``` The -d option is an alias for --delete, which only deletes the branch if it has already been fully merged in its upstream branch
 - ``` git branch -D <branch_name>``` You could also use -D, which is an alias for --delete --force, which deletes the branch "irrespective of its merged status."
 - ```git push <remote_name> --delete <branch_name>``` to delete a remote branch
+# File
+https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting
 
+git revert: an operation that takes a specified commit and creates a new commit which inverses the specified commit. git revert can only be run at a commit level scope and has no file level functionality
+
+git checkout:  A file level checkout will change the file's contents to those of the specific commit; discard changes in the working directory
+
+git reset: an operation that takes a specified commit and resets the "three trees" to match the state of the repository at that specified commit. A reset can be invoked in three different modes which correspond to the three trees.
+
+
+
+- ```git checkout -- <file>``` 
 # Log
 - ```git log --pretty=format:"%h - %an, %ar : %s"```  ca82a6d - Scott Chacon, 6 years ago : changed the version number
