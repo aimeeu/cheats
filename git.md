@@ -18,6 +18,8 @@
 .. limitations under the License.
 .. ===============LICENSE_END=========================================================
 -->
+# Clone
+ - ``git clone --single-branch --branch <branchname> <remote-repo>``
 # Branch
 - ```git checkout <branch_name>``` switches to that branch, pulling it down from origin if needed
 - ```git checkout -b <branch_name>``` creates and checks out a new branch
