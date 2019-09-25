@@ -39,4 +39,10 @@ Related issues with good info:
 - Release Handbook [Late Steps](https://github.com/kubernetes/sig-release/tree/master/release-team/role-handbooks/docs#late-steps-weeks-9-11)
 - Instructions in issue [#14111](https://github.com/kubernetes/website/issues/14111)
 
-# Generate Ref docs using instructions in contribute/generate-ref-docs
+# Generate Ref docs 
+## Generate manually 
+using instructions in contribute/generate-ref-docs
+
+## Automate existing process
+- create bash script (or go makefile?) that takes in k8s_base, web_base, rdocs_base, minor_version
+- modify reference-docs/makefile to take in parameters web_base, k8s_base, minor_version
