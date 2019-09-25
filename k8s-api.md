@@ -46,3 +46,5 @@ using instructions in contribute/generate-ref-docs
 ## Automate existing process
 - create bash script (or go makefile?) that takes in k8s_base, web_base, rdocs_base, minor_version
 - modify reference-docs/makefile to take in parameters web_base, k8s_base, minor_version
+
+##  Why isn't api doc generation done as part of a CI/CD process? 
