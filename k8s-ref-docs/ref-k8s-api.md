@@ -1,10 +1,8 @@
-# Generating API Docs Documentation
-- Release Handbook [Late Steps](https://github.com/kubernetes/sig-release/tree/master/release-team/role-handbooks/docs#late-steps-weeks-9-11)
-- Instructions in issue [#14111](https://github.com/kubernetes/website/issues/14111)
+# Generating Reference Documentation for the Kubernetes API
 
-# Generate Ref docs
 ## Generate manually
 using instructions in contribute/generate-ref-docs https://kubernetes.io/docs/contribute/generate-ref-docs/kubernetes-api/
+
 ### Clone repos
 make sure my fork is current with upstream
 
