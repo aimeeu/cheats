@@ -51,6 +51,8 @@ Note: if you need to change the url for a remote, use git remote set-url <upstre
 
 ## Update fork master from kubernetes/website master
 
+**Always always always** update your master fork before you create a branch for a PR!
+
 ```bash
 git checkout master
 git fetch origin
