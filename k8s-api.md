@@ -12,7 +12,9 @@
 4. [Generating Reference Pages for Kubernetes Components and Tools](https://kubernetes.io/docs/contribute/generate-ref-docs/kubernetes-components/) 
 
 # Repo
-https://github.com/kubernetes-incubator/reference-docs  @pwittrock and @tengqm are top contributors
+https://github.com/kubernetes-incubator/reference-docs  @pwittrock and @tengqm are top contributors; @kbhawkey very knowledgeable
+
+Repo will soon move to kubernetes-sigs space. https://github.com/kubernetes/org/issues/1158
 
 # The GitHub Issues
 The Docs Lead is responsible for generating:
@@ -34,6 +36,11 @@ Linked issues:
 
 Related issues with good info:
 - [15536 Documentation should explicitly mention which values are required/optional](https://github.com/kubernetes/website/issues/15536)
+
+# Slack threads
+- aimee and Jim Angel 9/26/19
+- v1.16 issue with publishe API docs including wrong js/bootstrap version (now fixed in ref-docs repo) https://kubernetes.slack.com/archives/C1J0BPD2M/p1569439245104900
+- https://kubernetes.slack.com/archives/C1J0BPD2M/p1569496753120100, https://kubernetes.slack.com/archives/C1J0BPD2M/p1569504098122000, https://kubernetes.slack.com/archives/C1J0BPD2M/p1569504118122700 -- which API versions are supported in which releases
 
 # Generating API Docs Documentation
 - Release Handbook [Late Steps](https://github.com/kubernetes/sig-release/tree/master/release-team/role-handbooks/docs#late-steps-weeks-9-11)
