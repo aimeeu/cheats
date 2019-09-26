@@ -1,9 +1,16 @@
 # General thought bubble before digging in
 
-- Why isn't api doc generation done as part of a CI/CD process? so master is always latest
+- Why isn't api doc generation done as part of a CI/CD merge process for a project? probably not possible in current environment - what about moving API docs to separate website? too much overhead?
 - Flaw: Kubernetes website doesn't have a 'latest' like ReadTheDocs does, so does v1.16 docs == master. Really, docs github branch v1.16 should equal rendered website documentation v1.16; website docs should have a 'latest' choice that equals 'master' content (or haven't I yet stumbled upon how this is done? Netlify, right?)
 - jenkins, travis CI, or ?
 - https://github.com/kubernetes-incubator/reference-docs/blob/master/gen-apidocs/generators/static/bootstrap.min.css -- can we point to a CDN istead?
+
+# Sites
+- https://swagger.io
+- https://github.com/OAI/OpenAPI-Specification
+- https://swagger.io/docs/specification/about/
+- https://swagger.io/specification/
+- https://github.com/go-openapi
 
 # Reference docs overview
 1. [Contributing to the Upstream Kubernetes Code](https://kubernetes.io/docs/contribute/generate-ref-docs/contribute-upstream/)
@@ -49,6 +56,34 @@ Related issues with good info:
 # Generate Ref docs 
 ## Generate manually 
 using instructions in contribute/generate-ref-docs
+### Clone repos
+make sure my fork is current with upstream
+
+```shell
+aimee@aimee-lemur:~/Dev/go$ go get -u github.com/kubernetes-incubator/reference-docs
+aimee@aimee-lemur:~/Dev/go$ go get -u github.com/go-openapi/loads
+aimee@aimee-lemur:~/Dev/go$ go get -u github.com/go-openapi/spec
+aimee@aimee-lemur:~/Dev/go$ git clone https://github.com/aimeeu/website $GOPATH/src/github.com/aimeeu/website
+fatal: destination path '/home/aimee/Dev/go/src/github.com/aimeeu/website' already exists and is not an empty directory.
+aimee@aimee-lemur:~/Dev/go$ git clone https://github.com/aimeeu/website $GOPATH/src/github.com/aimeeu/website
+Cloning into '/home/aimee/Dev/go/src/github.com/aimeeu/website'...
+remote: Enumerating objects: 19, done.
+remote: Counting objects: 100% (19/19), done.
+remote: Compressing objects: 100% (17/17), done.
+remote: Total 116641 (delta 6), reused 9 (delta 2), pack-reused 116622
+Receiving objects: 100% (116641/116641), 236.39 MiB | 27.13 MiB/s, done.
+Resolving deltas: 100% (76178/76178), done.
+aimee@aimee-lemur:~/Dev/go$ git clone https://github.com/kubernetes/kubernetes $GOPATH/src/k8s.io/kubernetes
+Cloning into '/home/aimee/Dev/go/src/k8s.io/kubernetes'...
+remote: Enumerating objects: 340, done.
+remote: Counting objects: 100% (340/340), done.
+remote: Compressing objects: 100% (206/206), done.
+remote: Total 1009646 (delta 174), reused 156 (delta 134), pack-reused 1009306
+Receiving objects: 100% (1009646/1009646), 670.85 MiB | 27.67 MiB/s, done.
+Resolving deltas: 100% (709662/709662), done.
+Checking out files: 100% (21030/21030), done.
+
+```
 
 ## Automate existing process
 - create bash script (or go makefile?) that takes in k8s_base, web_base, rdocs_base, minor_version
