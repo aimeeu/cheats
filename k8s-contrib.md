@@ -28,7 +28,9 @@ The Kubernetes projects use a single fork with multiple branch approach, as oppo
 
 1. Fork in the cloud: go to https://www.github.com/kubernetes/website and fork
 1. Clone your local fork
+
    git clone git@github.com:<github_id>/website.git
+   
     ```bash
     git clone git@github.com:aimeeu/website.git
     ```
