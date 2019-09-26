@@ -109,7 +109,7 @@ To github.com:aimeeu/website.git
     git commit -a --amend
     git push -f origin <branch-name>
     ```
-1. When all feedback has been addressed, squash commits down to a single commit (k8s project policy); check the number of commits on the PR's Commits tab and with ```git log```. If the number of commits you made is not the same between the two, you've foobarred something. Might lead to squash/rebase hell.
+1. When all feedback has been addressed, squash commits down to a single commit (k8s project policy); check the number of commits on the PR's Commits tab and with ```git log```. If the number of commits you made is not the same between the two, you've foobarred something. Might lead to squash/rebase hell. Note: you will not have to squash commits if you use ```git commit --amend`` 
     ```bash
     git rebase -i HEAD~<number of commits>
     ```
