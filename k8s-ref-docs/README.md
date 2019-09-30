@@ -19,9 +19,8 @@
 4. [Generating Reference Pages for Kubernetes Components and Tools](https://kubernetes.io/docs/contribute/generate-ref-docs/kubernetes-components/)
 
 # Repo
-https://github.com/kubernetes-incubator/reference-docs  @pwittrock and @tengqm are top contributors; @kbhawkey very knowledgeable
+https://github.com/kubernetes-witw/reference-docs  @pwittrock and @tengqm are top contributors; @kbhawkey very knowledgeable
 
-Repo will soon move to kubernetes-sigs space. https://github.com/kubernetes/org/issues/1158
 
 # The GitHub Issues
 The Docs Lead is responsible for generating:
