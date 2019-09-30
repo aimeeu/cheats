@@ -4,6 +4,7 @@
 - Flaw: Kubernetes website doesn't have a 'latest' like ReadTheDocs does, so does v1.16 docs == master. Really, docs github branch v1.16 should equal rendered website documentation v1.16; website docs should have a 'latest' choice that equals 'master' content (or haven't I yet stumbled upon how this is done? Netlify, right?) -> interesting discussion with Jim Angel on this topic
 - jenkins, travis CI, or ?
 - https://github.com/kubernetes-sigs/reference-docs/blob/master/gen-apidocs/generators/static/bootstrap.min.css -- html.go should point to CSS and JS files that already exist in the k8s/website repo
+- what does kubernetes/website/update-imported-docs/update-imported-docs (python script) really do? doesn't it execute commands to generate the API and kubectl docs all over again?
 
 # Sites
 - https://swagger.io
