@@ -3,7 +3,7 @@
 - Why isn't api doc generation done as part of a CI/CD merge process for a project? probably not possible in current environment - what about moving API docs to separate website? too much overhead?
 - Flaw: Kubernetes website doesn't have a 'latest' like ReadTheDocs does, so does v1.16 docs == master. Really, docs github branch v1.16 should equal rendered website documentation v1.16; website docs should have a 'latest' choice that equals 'master' content (or haven't I yet stumbled upon how this is done? Netlify, right?) -> interesting discussion with Jim Angel on this topic
 - jenkins, travis CI, or ?
-- https://github.com/kubernetes-incubator/reference-docs/blob/master/gen-apidocs/generators/static/bootstrap.min.css -- can we point to a CDN istead?
+- https://github.com/kubernetes-sigs/reference-docs/blob/master/gen-apidocs/generators/static/bootstrap.min.css -- html.go should point to CSS and JS files that already exist in the k8s/website repo
 
 # Sites
 - https://swagger.io
@@ -19,7 +19,7 @@
 4. [Generating Reference Pages for Kubernetes Components and Tools](https://kubernetes.io/docs/contribute/generate-ref-docs/kubernetes-components/)
 
 # Repo
-https://github.com/kubernetes-witw/reference-docs  @pwittrock and @tengqm are top contributors; @kbhawkey very knowledgeable
+https://github.com/kubernetes-sigs/reference-docs  @pwittrock and @tengqm are top contributors; @kbhawkey very knowledgeable
 
 
 # The GitHub Issues
