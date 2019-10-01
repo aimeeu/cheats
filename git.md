@@ -43,3 +43,122 @@ git reset: an operation that takes a specified commit and resets the "three tree
 - ```git checkout -- <file>``` 
 # Log
 - ```git log --pretty=format:"%h - %an, %ar : %s"```  ca82a6d - Scott Chacon, 6 years ago : changed the version number
+
+# Cherry Pick
+
+- Cherry pick commit from master into a release branch.
+- Make sure origin is up-to-date upstream.
+
+## In master, find the commit you want to cherry pick.
+```shell
+aimee@aimee-lemur:~/Dev/git/github.com/aimeeu/k8s/sigdocs/website$ git log --oneline
+...
+82d811354 Fix site build (#16531)
+```
+
+```git branch -r``` to see all available branches
+
+## git checkout release branch
+```shell
+aimee@aimee-lemur:~/Dev/git/github.com/aimeeu/k8s/sigdocs/website$ git checkout origin/release-1.16
+Note: checking out 'origin/release-1.16'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 32b0e539a promote AWS-NLB Support from alpha to beta (#14451) (#16459) (#16484)
+aimee@aimee-lemur:~/Dev/git/github.com/aimeeu/k8s/sigdocs/website$ git branch
+* (HEAD detached at origin/release-1.16)
+  15748-removeThirdPartyContent
+  15965-blog
+  16100-mentionContentGuide
+  aimeeu-2019SurveyResultsBlog
+  aimeeu-bootstrapVersion
+  aimeeu-updateRefDocsLocation
+  clarifyContentGuide
+  master
+  release-1.16
+  updateTriageSection
+```
+
+## Create a local branch for changes.
+```shell
+aimee@aimee-lemur:~/Dev/git/github.com/aimeeu/k8s/sigdocs/website$ git checkout -b aimeeu-1.16-cherrypick-pr16531
+Switched to a new branch 'aimeeu-1.16-cherrypick-pr16531'
+```
+
+## Cherry pick
+
+Note: using ```git cherry-pick --edit <hash>``` will enable you to edit the commit message
+```shell
+aimee@aimee-lemur:~/Dev/git/github.com/aimeeu/k8s/sigdocs/website$ git cherry-pick 82d811354
+[aimeeu-1.16-cherrypick-pr16531 14105459f] Fix site build (#16531)
+ Author: Qiming <tengqim@cn.ibm.com>
+ Date: Wed Sep 25 00:35:30 2019 +0800
+ 4 files changed, 24 insertions(+), 22 deletions(-)
+ delete mode 100644 content/en/docs/tutorials/clusters/deny-write.profile
+ delete mode 100644 content/ko/docs/tutorials/clusters/deny-write.profile
+```
+Note that ```git status``` says nothing to commit
+```shell
+aimee@aimee-lemur:~/Dev/git/github.com/aimeeu/k8s/sigdocs/website$ git status
+On branch aimeeu-1.16-cherrypick-pr16531
+nothing to commit, working tree clean
+```
+
+## Test compile
+```shell
+aimee@aimee-lemur:~/Dev/git/github.com/aimeeu/k8s/sigdocs/website$ hugo version
+Hugo Static Site Generator v0.57.2-A849CB2D/extended linux/amd64 BuildDate: 2019-08-17T17:57:54Z
+aimee@aimee-lemur:~/Dev/git/github.com/aimeeu/k8s/sigdocs/website$ hugo serve
+Building sites … WARN 2019/10/01 15:26:00 Content directory "/home/aimee/Dev/git/github.com/aimeeu/k8s/sigdocs/website/content/en/docs/reference/kubernetes-api" have both index.* and _index.* files, pick one.
+WARN 2019/10/01 15:26:00 Content directory "/home/aimee/Dev/git/github.com/aimeeu/k8s/sigdocs/website/content/en/docs/reference/kubernetes-api" have both index.* and _index.* files, pick one.
+WARN 2019/10/01 15:26:00 Content directory "/home/aimee/Dev/git/github.com/aimeeu/k8s/sigdocs/website/content/en/docs/reference/kubernetes-api" have both index.* and _index.* files, pick one.
+
+                   |  EN  |  ZH  |  KO  |  JA  |  FR  |  DE  |  ES  |  PT  |  ID   
++------------------+------+------+------+------+------+------+------+------+------+
+  Pages            | 1069 |  208 |  270 |  136 |  206 |  103 |  144 |   25 |   83  
+  Paginator pages  |  296 |    7 |    0 |    0 |    0 |    0 |    0 |    0 |    0  
+  Non-page files   |  438 |  181 |  150 |  215 |  106 |   67 |   77 |   12 |   42  
+  Static files     | 1012 | 1012 | 1012 | 1012 | 1012 | 1012 | 1012 | 1012 | 1012  
+  Processed images |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0  
+  Aliases          |    5 |    1 |    0 |    0 |    1 |    1 |    1 |    1 |    0  
+  Sitemaps         |    2 |    1 |    1 |    1 |    1 |    1 |    1 |    1 |    1  
+  Cleaned          |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0  
+
+Total in 8509 ms
+Watching for changes in /home/aimee/Dev/git/github.com/aimeeu/k8s/sigdocs/website/{archetypes,assets,content,data,i18n,layouts,static}
+Watching for config changes in /home/aimee/Dev/git/github.com/aimeeu/k8s/sigdocs/website/config.toml
+Environment: "development"
+Serving pages from memory
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+```
+
+## Force push changes
+```shell
+aimee@aimee-lemur:~/Dev/git/github.com/aimeeu/k8s/sigdocs/website$ git push -f origin aimeeu-1.16-cherrypick-pr16531
+Enumerating objects: 22, done.
+Counting objects: 100% (22/22), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (13/13), 8.59 KiB | 8.59 MiB/s, done.
+Total 13 (delta 8), reused 7 (delta 4)
+remote: Resolving deltas: 100% (8/8), completed with 8 local objects.
+remote: 
+remote: Create a pull request for 'aimeeu-1.16-cherrypick-pr16531' on GitHub by visiting:
+remote:      https://github.com/aimeeu/website/pull/new/aimeeu-1.16-cherrypick-pr16531
+remote: 
+To github.com:aimeeu/website.git
+ * [new branch]          aimeeu-1.16-cherrypick-pr16531 -> aimeeu-1.16-cherrypick-pr16531
+```
+
+## Create PR
+Create PR in kubernetes/website like normal
