@@ -95,9 +95,11 @@ Switched to a new branch 'aimeeu-1.16-cherrypick-pr16531'
 
 ## Cherry pick
 
+https://git-scm.com/docs/git-cherry-pick
+
 Note: using ```git cherry-pick --edit <hash>``` will enable you to edit the commit message
 ```shell
-aimee@aimee-lemur:~/Dev/git/github.com/aimeeu/k8s/sigdocs/website$ git cherry-pick 82d811354
+aimee@aimee-lemur:~/Dev/git/github.com/aimeeu/k8s/sigdocs/website$ git cherry-pick 82d811354 --edit
 [aimeeu-1.16-cherrypick-pr16531 14105459f] Fix site build (#16531)
  Author: Qiming <tengqim@cn.ibm.com>
  Date: Wed Sep 25 00:35:30 2019 +0800
