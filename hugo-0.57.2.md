@@ -124,6 +124,7 @@ Error: Error building site: "/home/aimee/Dev/git/github.com/aimeeu/k8s/old-versi
 ```
 
 # master
+```shell
 aimee@aimee-lemur:~/Dev/git/github.com/aimeeu/k8s/old-versions/master/website$ hugo serve
 Building sites … WARN 2019/10/01 11:24:52 Content directory "/home/aimee/Dev/git/github.com/aimeeu/k8s/old-versions/master/website/content/en/docs/reference/kubernetes-api" have both index.* and _index.* files, pick one.
 WARN 2019/10/01 11:24:52 Content directory "/home/aimee/Dev/git/github.com/aimeeu/k8s/old-versions/master/website/content/en/docs/reference/kubernetes-api" have both index.* and _index.* files, pick one.
