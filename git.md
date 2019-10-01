@@ -161,4 +161,4 @@ To github.com:aimeeu/website.git
 ```
 
 ## Create PR
-Create PR in kubernetes/website like normal
+Create PR in kubernetes/website - **be sure to pick the correct kubernetes/website branch**
