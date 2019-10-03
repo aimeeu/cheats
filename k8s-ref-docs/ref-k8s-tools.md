@@ -167,12 +167,8 @@ Traceback (most recent call last):
   File "./update-imported-docs.py", line 136, in main
     os.mkdir(workDir, 0o750)
 FileExistsError: [Errno 17] File exists: '/tmp/update_docs'
-aimee@aimee-lemur:~/Dev/go/src/github.com/aimeeu/website/update-imported-docs$ sudo rm /tmp/update_docs
-[sudo] password for aimee: 
-rm: cannot remove '/tmp/update_docs': Is a directory
 aimee@aimee-lemur:~/Dev/go/src/github.com/aimeeu/website/update-imported-docs$ sudo rm -rf /tmp/update_docs
-aimee@aimee-lemur:~/Dev/go/src/github.com/aimeeu/website/update-imported-docs$ sudo rm /tmp/update_docs
-rm: cannot remove '/tmp/update_docs': No such file or directory
+[sudo] password for aimee: 
 aimee@aimee-lemur:~/Dev/go/src/github.com/aimeeu/website/update-imported-docs$ ./update-imported-docs.py reference.yml
 ./update-imported-docs.py:129: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
   configData = yaml.load(open(configFile, 'r'))
