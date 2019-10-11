@@ -118,3 +118,39 @@ To github.com:aimeeu/website.git
     
 
 Note: if you use ```git commit -a --amend```, only one commit will appear in the GitHub UI. So keep the commit message the same and just add line items for what was updated in each commit (the opposite of OpenStack etiquette).
+
+# Pulling down somebody's PR for local testing
+
+https://help.github.com/en/articles/checking-out-pull-requests-locally
+
+```bash
+aimee@aimee-lemur:~/Dev/git/github.com/aimeeu/k8s/sigdocs/website$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'upstream/master'.
+aimee@aimee-lemur:~/Dev/git/github.com/aimeeu/k8s/sigdocs/website$ git remote -v
+origin	git@github.com:aimeeu/website.git (fetch)
+origin	git@github.com:aimeeu/website.git (push)
+upstream	https://github.com/kubernetes/website (fetch)
+upstream	no_push (push)
+aimee@aimee-lemur:~/Dev/git/github.com/aimeeu/k8s/sigdocs/website$ git fetch upstream pull/16813/head:update115toHugo572
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 2 (delta 1), reused 1 (delta 1), pack-reused 1
+Unpacking objects: 100% (2/2), done.
+From https://github.com/kubernetes/website
+ * [new ref]             refs/pull/16813/head -> update115toHugo572
+aimee@aimee-lemur:~/Dev/git/github.com/aimeeu/k8s/sigdocs/website$ git branch
+  15748-removeThirdPartyContent
+  15965-blog
+  aimeeu-15878-contribIntermediate
+  aimeeu-2019SurveyResultsBlog
+  aimeeu-addReviewBestPractices
+  aimeeu-bootstrapVersion
+  aimeeu-updateImportedDocsScriptDirections
+  aimeeu-updateRefDocsLocation
+  clarifyContentGuide
+* master
+  release-1.16
+  update115toHugo572
+
+```
