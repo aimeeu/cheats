@@ -7,7 +7,7 @@ using instructions in contribute/generate-ref-docs https://kubernetes.io/docs/co
 make sure my fork is current with upstream
 
 ```shell
-aimee@aimee-lemur:~/Dev/go$ go get -u github.com/kubernetes-incubator/reference-docs
+aimee@aimee-lemur:~/Dev/go$ go get -u github.com/kubernetes-sigs/reference-docs
 aimee@aimee-lemur:~/Dev/go$ go get -u github.com/go-openapi/loads
 aimee@aimee-lemur:~/Dev/go$ go get -u github.com/go-openapi/spec
 aimee@aimee-lemur:~/Dev/go$ git clone https://github.com/aimeeu/website $GOPATH/src/github.com/aimeeu/website
