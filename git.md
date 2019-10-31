@@ -25,6 +25,15 @@
 - ```git checkout -b <branch_name>``` creates and checks out a new branch
 - ```git branch``` lists names of local branches
 
+## Rename
+1. Rename your local branch.
+If you are on the branch you want to rename: ```git branch -m new-name```
+If you are on a different branch: ```git branch -m old-name new-name```
+2. Delete the old-name remote branch and push the new-name local branch.
+```git push origin :old-name new-name```
+3. Reset the upstream branch for the new-name local branch.
+Switch to the branch and then: ```git push origin -u new-name```
+
 ## Delete
 - ```git branch -d <branch_name>``` The -d option is an alias for --delete, which only deletes the branch if it has already been fully merged in its upstream branch
 - ``` git branch -D <branch_name>``` You could also use -D, which is an alias for --delete --force, which deletes the branch "irrespective of its merged status."
