@@ -9,6 +9,7 @@
 
 
 1. Fetch 1.15 branch into 'automated' directory
-1. Create virtual environment with Python 2.7 (follow instructions in doc)
-1. Run script
+1. Fetch master version of script and yaml
+1. Create virtual environment with Python 3.6 (follow instructions in doc)
+1. Run script targeted at 1.16
 1. Compare with manually generated docs
