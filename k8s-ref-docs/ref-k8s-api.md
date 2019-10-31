@@ -50,7 +50,7 @@ aimee@aimee-lemur:~/Dev/go/src/github.com/kubernetes-incubator/reference-docs$ m
 cp ~/Dev/go/src/k8s.io/kubernetes/api/openapi-spec/swagger.json gen-apidocs/generators/openapi-spec/swagger.json
 ```
 
-Run ```make apidocs``` (why does ```cleanapi``` require sudo??? shouldn't!!! neither should ```cleancli```)
+Run ```make api``` (why does ```cleanapi``` require sudo??? shouldn't!!! neither should ```cleancli```)
 ```shell
 aimee@aimee-lemur:~/Dev/go/src/github.com/kubernetes-incubator/reference-docs$ make api
 sudo rm -rf /home/aimee/Dev/go/src/github.com/kubernetes-incubator/reference-docs/gen-apidocs/generators/build
