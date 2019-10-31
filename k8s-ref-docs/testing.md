@@ -1,12 +1,13 @@
 # Piece of mind testing
 
-## Manual vs script
+## Manual
 
 1. Fetch 1.15 branch into 'manual' directory
 1. Manually generate API and kubectl docs based on master
 1. View changes between 1.15 and master
 1. Update docs if needed
 
+## Script
 
 1. Fetch 1.15 branch into 'automated' directory
 1. Fetch master version of script and yaml
