@@ -70,6 +70,7 @@ navData.js built
 ```
 
 ### Copying the generated docs to the kubernetes/website repository
+Create a `v1.<minor_version>` directory in website/static/docs/reference/generated/kubernetes-api
 
 ```shell
 aimee@aimee-lemur:~/Dev/go/src/github.com/kubernetes-incubator/reference-docs$ make copyapi
