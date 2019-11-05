@@ -41,6 +41,7 @@ All three sites have different headers, which are different from armory.io
 - intro sections for the Armory products: Spinnaker, Halyard, Dinghy (any product the customer uses)
 - User Guides - Best Practices: move to a configuration section
 - Group like content together; Best Practices has sections on Secrets and there are 3 secrets pages in the Installation and Administration Guides section
+- Glossary AND a Nomenclature and Naming Conventions page; combine
 - dual-source: do not want to replicate Spinnaker upstream docs; do not want to duplicate content on main Armory website
 
 ## Content: Style guide
