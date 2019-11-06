@@ -52,7 +52,8 @@ what's the current build and deploy process? how are api and cli ref docs genera
 ## Content: github
 - no feature branches
 - no release branches/tags in documentation or kb
-- 
+
+
 ## Content: Style guide
 - written by software engineers
 - who is the target audience?
