@@ -49,6 +49,10 @@ what's the current build and deploy process? how are api and cli ref docs genera
 - Glossary AND a Nomenclature and Naming Conventions page; combine
 - dual-source: do not want to replicate Spinnaker upstream docs; do not want to duplicate content on main Armory website
 
+## Content: github
+- no feature branches
+- no release branches/tags in documentation or kb
+- 
 ## Content: Style guide
 - written by software engineers
 - who is the target audience?
