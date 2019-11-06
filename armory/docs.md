@@ -14,6 +14,9 @@ This will be a conversation with me and either a PM or Engineer, so someone who 
 
 - Brian is evaluating [Helpdocs](https://www.helpdocs.io/) and [Document360](https://document360.io/_)
 
+- who hosts the docs sites now? what about netflify?
+
+
 ## Technical: Search functionality?
 - no search functionality for docs.armory.io
 
@@ -24,13 +27,15 @@ This will be a conversation with me and either a PM or Engineer, so someone who 
 
 All three sites have different headers, which are different from armory.io
 
+what's the current build and deploy process? how are api and cli ref docs generated?
+
 ### blog
 - blog site uses web (CDNs, fontawesome.com) to grab JS; same with stylesheets - users outside of US and Canada may experience delays or no access (China)
 - no menu of blogs, so have to click through pages to see what blogs have been published
 - no RSS Feed link
 
 ## Content: Content organization
-- docs is for both Armory Spinnaker and Armory Halyard - should have separate sections for each
+- docs is for both Armory Spinnaker and Armory Halyard - should have separate sections for each and new third product?
 
   - installation and configuration
   - troubleshooting
