@@ -8,7 +8,7 @@
 - atom-csv-markdown
 - wordcount
 - markdown-folding
-- hard-wrap
+- tidy-markdown
 
 ## Useful
 - `ctrl-shift-q` formats selected text to hard wrap at 80
