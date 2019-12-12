@@ -11,4 +11,5 @@
 - tidy-markdown
 
 ## Useful
-- `ctrl-shift-q` formats selected text to hard wrap at 80
+- Ubuntu: `ctrl-shift-q` formats selected text to hard wrap at 80 
+- MAC: `cmd-option-q` formats  selected text to hard wrap at 80 
