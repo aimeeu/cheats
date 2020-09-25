@@ -18,23 +18,35 @@
 .. limitations under the License.
 .. ===============LICENSE_END=========================================================
 -->
+
+# Git Tutorial
+
+https://github.com/Gazler/githug
+
 # Clone
+
  - ``git clone --single-branch --branch <branchname> <remote-repo>``
-# Branch
+
+# Branches
+
 - ```git checkout <branch_name>``` switches to that branch, pulling it down from origin if needed
 - ```git checkout -b <branch_name>``` creates and checks out a new branch
 - ```git branch``` lists names of local branches
 
 ## Rename
+
 1. Rename your local branch.
-If you are on the branch you want to rename: ```git branch -m new-name```
-If you are on a different branch: ```git branch -m old-name new-name```
+If you are on the branch you want to rename: `git branch -m new-name`
+If you are on a different branch: `git branch -m old-name new-name`
 2. Delete the old-name remote branch and push the new-name local branch.
-```git push origin :old-name new-name```
+
+   `git push origin :old-name new-name`
+
 3. Reset the upstream branch for the new-name local branch.
-Switch to the branch and then: ```git push origin -u new-name```
+   Switch to the branch and then: `git push origin -u new-name`
 
 ## Delete
+
 - ```git branch -d <branch_name>``` The -d option is an alias for --delete, which only deletes the branch if it has already been fully merged in its upstream branch
 - ``` git branch -D <branch_name>``` You could also use -D, which is an alias for --delete --force, which deletes the branch "irrespective of its merged status."
 - ```git push <remote_name> --delete <branch_name>``` to delete a remote branch
@@ -49,10 +61,44 @@ git reset: an operation that takes a specified commit and resets the "three tree
 
 
 
-- ```git checkout -- <file>``` 
+- ```git checkout -- <file>```
+
 # Log
 - ```git log --pretty=format:"%h - %an, %ar : %s"```  ca82a6d - Scott Chacon, 6 years ago : changed the version number
+- `git log --oneline`
 
+# Rebase vs Merge
+
+courtesy of Kevin Woo:
+
+* **rebase**: if you are working by yourself and pulling in changes from somewhere (but you ultimately are owning it and just you)
+* **merge**: works well with others because you don't rewrite commits that you don't own
+
+If you have a branch branched from another branch instead of master, and you want to update from master:
+
+```bash
+git checkout master
+git pull
+git checkout matrix/pcm-v1
+git merge master
+git push
+git checkout matrix/pcm-v1-clouddriver
+git merge matrix/pcm-v1   <---- merging from this branch because I based off of of matrix/pcm-v1
+git push
+```
+
+this keeps the history as clean as possible
+
+
+rebasing is saying "i'm going to override all the existing commits with a new signature so nothing will be easily matched"
+
+
+another option is just to do:
+
+```bash
+git checkout matrix/pcm-v1-clouddriver
+git merge master
+```
 # Cherry Pick
 
 - Cherry pick commit from master into a release branch.
@@ -163,13 +209,15 @@ Compressing objects: 100% (9/9), done.
 Writing objects: 100% (13/13), 8.59 KiB | 8.59 MiB/s, done.
 Total 13 (delta 8), reused 7 (delta 4)
 remote: Resolving deltas: 100% (8/8), completed with 8 local objects.
-remote: 
+remote:
 remote: Create a pull request for 'aimeeu-1.16-cherrypick-pr16531' on GitHub by visiting:
 remote:      https://github.com/aimeeu/website/pull/new/aimeeu-1.16-cherrypick-pr16531
-remote: 
+remote:
 To github.com:aimeeu/website.git
  * [new branch]          aimeeu-1.16-cherrypick-pr16531 -> aimeeu-1.16-cherrypick-pr16531
 ```
 
 ## Create PR
 Create PR in kubernetes/website - **be sure to pick the correct kubernetes/website branch**
+
+
