@@ -154,3 +154,139 @@ aimee@aimee-lemur:~/Dev/git/github.com/aimeeu/k8s/sigdocs/website$ git branch
   update115toHugo572
 
 ```
+
+#### Merge conflicts and rebasing
+
+{{< note >}}
+For more information, see [Git Branching - Basic Branching and Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging#_basic_merge_conflicts), [Advanced Merging](https://git-scm.com/book/en/v2/Git-Tools-Advanced-Merging), or ask in the `#sig-docs` Slack channel for help.
+{{< /note >}}
+
+If another contributor commits changes to the same file in another PR, it can create a merge conflict. You must resolve all merge conflicts in your PR.
+
+1. Update your fork and rebase your local branch:
+
+    ```bash
+    git fetch origin
+    git rebase origin/<your-branch-name>
+    ```
+
+    Then force-push the changes to your fork:
+
+    ```bash
+    git push --force-with-lease origin <your-branch-name>
+    ```
+
+2. Fetch changes from `kubernetes/website`'s `upstream/master` and rebase your branch:
+
+    ```bash
+    git fetch upstream
+    git rebase upstream/master
+    ```
+
+3. Inspect the results of the rebase:
+
+    ```bash
+    git status
+    ```
+
+  This results in a number of files marked as conflicted.
+
+4. Open each conflicted file and look for the conflict markers: `>>>`, `<<<`, and `===`. Resolve the conflict and delete the conflict marker.
+
+    {{< note >}}
+    For more information, see [How conflicts are presented](https://git-scm.com/docs/git-merge#_how_conflicts_are_presented).
+    {{< /note >}}
+
+5. Add the files to the changeset:
+
+    ```bash
+    git add <filename>
+    ```
+6.  Continue the rebase:
+
+    ```bash
+    git rebase --continue
+    ```
+
+7.  Repeat steps 2 to 5 as needed.
+
+    After applying all commits, the `git status` command shows that the rebase is complete.
+
+8. Force-push the branch to your fork:
+
+    ```bash
+    git push --force-with-lease origin <your-branch-name>
+    ```
+
+    The pull request no longer shows any conflicts.
+
+
+### Squashing commits
+
+{{< note >}}
+For more information, see [Git Tools - Rewriting History](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History), or ask in the `#sig-docs` Slack channel for help.
+{{< /note >}}
+
+If your PR has multiple commits, you must squash them into a single commit before merging your PR. You can check the number of commits on your PR's **Commits** tab or by running the `git log` command locally.
+
+{{< note >}}
+This topic assumes `vim` as the command line text editor.
+{{< /note >}}
+
+1. Start an interactive rebase:
+
+    ```bash
+    git rebase -i HEAD~<number_of_commits_in_branch>
+    ```
+
+    Squashing commits is a form of rebasing. The `-i` switch tells git you want to rebase interactively. `HEAD~<number_of_commits_in_branch` indicates how many commits to look at for the rebase.
+
+    Output is similar to:
+
+    ```bash
+    pick d875112ca Original commit
+    pick 4fa167b80 Address feedback 1
+    pick 7d54e15ee Address feedback 2
+
+    # Rebase 3d18sf680..7d54e15ee onto 3d183f680 (3 commands)
+
+    ...
+
+    # These lines can be re-ordered; they are executed from top to bottom.
+    ```
+
+    The first section of the output lists the commits in the rebase. The second section lists the options for each commit. Changing the word `pick` changes the status of the commit once the rebase is complete.
+
+    For the purposes of rebasing, focus on `squash` and `pick`.
+
+    {{< note >}}
+    For more information, see [Interactive Mode](https://git-scm.com/docs/git-rebase#_interactive_mode).
+    {{< /note >}}
+
+2. Start editing the file.
+
+    Change the original text:
+
+    ```bash
+    pick d875112ca Original commit
+    pick 4fa167b80 Address feedback 1
+    pick 7d54e15ee Address feedback 2
+    ```
+
+    To:
+
+    ```bash
+    pick d875112ca Original commit
+    squash 4fa167b80 Address feedback 1
+    squash 7d54e15ee Address feedback 2
+    ```
+
+    This squashes commits `4fa167b80 Address feedback 1` and `7d54e15ee Address feedback 2` into `d875112ca Original commit`, leaving only `d875112ca Original commit` as a part of the timeline.
+
+3. Save and exit your file.
+
+4. Push your squashed commit:
+
+    ```bash
+    git push --force-with-lease origin <branch_name>
+    ```
