@@ -220,4 +220,94 @@ To github.com:aimeeu/website.git
 ## Create PR
 Create PR in kubernetes/website - **be sure to pick the correct kubernetes/website branch**
 
+## Stash and pop and unstash
 
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+aimeeu@aimeeuMBP16:~/Dev/git/github.com/armory/docs$ git status
+On branch agent-mtls
+Your branch is up to date with 'origin/agent-mtls'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   content/en/docs/armory-agent/agent-monitoring.md
+        modified:   content/en/docs/armory-agent/agent-uninstalling.md
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both modified:   content/en/docs/armory-agent/_index.md
+        both modified:   content/en/docs/armory-agent/agent-options.md
+        both modified:   content/en/docs/armory-agent/agent-plugin-options.md
+        both modified:   content/en/docs/armory-agent/agent-troubleshooting.md
+        both modified:   content/en/docs/armory-agent/armory-agent-quick.md
+
+aimeeu@aimeeuMBP16:~/Dev/git/github.com/armory/docs$ git reset HEAD .
+Unstaged changes after reset:
+M       content/en/docs/armory-agent/_index.md
+M       content/en/docs/armory-agent/agent-monitoring.md
+M       content/en/docs/armory-agent/agent-options.md
+M       content/en/docs/armory-agent/agent-plugin-options.md
+M       content/en/docs/armory-agent/agent-troubleshooting.md
+M       content/en/docs/armory-agent/agent-uninstalling.md
+M       content/en/docs/armory-agent/armory-agent-quick.md
+aimeeu@aimeeuMBP16:~/Dev/git/github.com/armory/docs$ git status
+On branch agent-mtls
+Your branch is up to date with 'origin/agent-mtls'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   content/en/docs/armory-agent/_index.md
+        modified:   content/en/docs/armory-agent/agent-monitoring.md
+        modified:   content/en/docs/armory-agent/agent-options.md
+        modified:   content/en/docs/armory-agent/agent-plugin-options.md
+        modified:   content/en/docs/armory-agent/agent-troubleshooting.md
+        modified:   content/en/docs/armory-agent/agent-uninstalling.md
+        modified:   content/en/docs/armory-agent/armory-agent-quick.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+aimeeu@aimeeuMBP16:~/Dev/git/github.com/armory/docs$ git stash list
+stash@{0}: WIP on eng5172-agentClusterRole: add3ec2 eng-5896
+stash@{1}: WIP on cookiebot-375: b3b872f Merge branch 'master' into cookiebot-375
+aimeeu@aimeeuMBP16:~/Dev/git/github.com/armory/docs$ git checkout content/en/docs/armory-agent/_index.md
+Updated 1 path from the index
+aimeeu@aimeeuMBP16:~/Dev/git/github.com/armory/docs$ git status
+On branch agent-mtls
+Your branch is up to date with 'origin/agent-mtls'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   content/en/docs/armory-agent/agent-monitoring.md
+        modified:   content/en/docs/armory-agent/agent-options.md
+        modified:   content/en/docs/armory-agent/agent-plugin-options.md
+        modified:   content/en/docs/armory-agent/agent-troubleshooting.md
+        modified:   content/en/docs/armory-agent/agent-uninstalling.md
+        modified:   content/en/docs/armory-agent/armory-agent-quick.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+aimeeu@aimeeuMBP16:~/Dev/git/github.com/armory/docs$ git checkout master
+error: Your local changes to the following files would be overwritten by checkout:
+        content/en/docs/armory-agent/agent-monitoring.md
+        content/en/docs/armory-agent/agent-options.md
+        content/en/docs/armory-agent/agent-plugin-options.md
+        content/en/docs/armory-agent/agent-troubleshooting.md
+        content/en/docs/armory-agent/armory-agent-quick.md
+Please commit your changes or stash them before you switch branches.
+Aborting
+aimeeu@aimeeuMBP16:~/Dev/git/github.com/armory/docs$ git checkout agent-mtls -- content/en/docs/armory-agent/
+aimeeu@aimeeuMBP16:~/Dev/git/github.com/armory/docs$ git status
+On branch agent-mtls
+Your branch is up to date with 'origin/agent-mtls'.
+
+nothing to commit, working tree clean
+aimeeu@aimeeuMBP16:~/Dev/git/github.com/armory/docs$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 7 commits.
+  (use "git push" to publish your local commits)
+  
+  
+  type killmerged
+killmerged is an alias for git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -dexport
