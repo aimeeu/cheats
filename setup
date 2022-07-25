@@ -1,0 +1,22 @@
+- Slack
+- 1 Password (corp account)
+- Cloud App - note that the screenshots are publicly accessible unless you manually set them to private 
+- Dropbox
+- Zoom
+- Google Meet
+- Okta browser extension
+- whatever IT support needs for tracking the laptop
+- GitHub CLI (makes it easier to grab pull request content)
+- IDEs: Atom, VSCode, IntelliJ (if needed; community or corp subscription)
+- Vale and the Google Style Guide via a GitHub Action. You can run it locally too.
+- Docker
+- Amphetamine
+- iTerm or your favorite terminal
+- XMenu
+- BetterTouchTool, Moom
+- BeyondCompare or Meld (diff)
+- Dash
+- iStat Menus
+- XMenu
+- Carbon Copy Cloner 
+- VirtualBox
