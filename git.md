@@ -23,9 +23,16 @@
 
 https://github.com/Gazler/githug
 
-# Clone
+# Clone single branch
 
  - ``git clone --single-branch --branch <branchname> <remote-repo>``
+
+## Mirror single branch
+- `git clone --bare --single-branch --branch master git@github.com:<user>/<repo>.git`
+- `git push --mirror git@github.com:<user>/<new-repo>.git`
+
+New repo must exist before you push.
+https://docs.github.com/en/repositories/creating-and-managing-repositories/duplicating-a-repository  
 
 # Branches
 
