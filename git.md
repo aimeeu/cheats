@@ -40,6 +40,21 @@ https://docs.github.com/en/repositories/creating-and-managing-repositories/dupli
 - ```git checkout -b <branch_name>``` creates and checks out a new branch
 - ```git branch``` lists names of local branches
 
+## Check out a branch and create a local working copy against that branch
+
+```
+# Creates the myFeature branch off dev. Do your work and then
+git checkout -b myFeature dev
+
+# update and commit
+git commit -am "Your message"
+
+# push local to origin, which should be the existing dev branch
+git push -u origin myFeature
+# The -u flag ensures that myFeature is created in our remote repository and linked to our local myFeature branch.
+```
+https://www.geeksforgeeks.org/git-create-a-branch-from-another-branch/
+
 ## Rename
 
 1. Rename your local branch.
