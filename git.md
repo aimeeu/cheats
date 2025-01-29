@@ -43,14 +43,17 @@ https://docs.github.com/en/repositories/creating-and-managing-repositories/dupli
 ## Check out a branch and create a local working copy against that branch
 
 ```
-# Creates the myFeature branch off dev. Do your work and then
-git checkout -b myFeature dev
+# Check out remote feature branch, such as dev
+git checkout dynamic-host-volumes-docs
+
+# Creates the ce805 branch off dynamic-host-volumes-docs. Do your work and then
+git checkout -b ce805 dynamic-host-volumes-docs
 
 # update and commit
 git commit -am "Your message"
 
-# push local to origin, which should be the existing dev branch
-git push -u origin myFeature
+# push local to origin, which should be the existing dynamic-host-volumes-docs branch
+git push -u origin ce805
 # The -u flag ensures that myFeature is created in our remote repository and linked to our local myFeature branch.
 ```
 https://www.geeksforgeeks.org/git-create-a-branch-from-another-branch/
