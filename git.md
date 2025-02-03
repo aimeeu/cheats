@@ -126,10 +126,34 @@ git merge master
 ```
 # Cherry Pick
 
+## HashiCorp
+
+Find and copy commit
+
+```
+git main pull
+git log
+```
+
+Check out branch to cherry pick commit to and create local copy
+
+```
+git checkout release/1.18.x
+git checkout -b backport release/1.18.x
+```
+
+Cherry pick
+
+```
+git cherry-pick <commit-number>
+```
+
+## K8s
+
 - Cherry pick commit from master into a release branch.
 - Make sure origin is up-to-date upstream.
 
-## In master, find the commit you want to cherry pick.
+### In master, find the commit you want to cherry pick.
 ```shell
 aimee@aimee-lemur:~/Dev/git/github.com/aimeeu/k8s/sigdocs/website$ git log --oneline
 ...
@@ -138,7 +162,7 @@ aimee@aimee-lemur:~/Dev/git/github.com/aimeeu/k8s/sigdocs/website$ git log --one
 
 ```git branch -r``` to see all available branches
 
-## git checkout release branch
+### git checkout release branch
 ```shell
 aimee@aimee-lemur:~/Dev/git/github.com/aimeeu/k8s/sigdocs/website$ git checkout origin/release-1.16
 Note: checking out 'origin/release-1.16'.
@@ -167,38 +191,13 @@ aimee@aimee-lemur:~/Dev/git/github.com/aimeeu/k8s/sigdocs/website$ git branch
   updateTriageSection
 ```
 
-## Create a local branch for changes.
+### Create a local branch for changes.
 ```shell
 aimee@aimee-lemur:~/Dev/git/github.com/aimeeu/k8s/sigdocs/website$ git checkout -b aimeeu-1.16-cherrypick-pr16531
 Switched to a new branch 'aimeeu-1.16-cherrypick-pr16531'
 ```
 
-## Cherry pick
-
-### HashiCorp
-
-Find and copy commit
-
-```
-git main pull
-git log
-```
-
-Check out branch to cherry pick commit to and create local copy
-
-```
-git checkout release/1.18.x
-git checkout -b backport release/1.18.x
-```
-
-Cherry pick
-
-```
-git cherry-pick <commit-number>
-```
-
-
-### K8s
+### Cherry pick
 
 https://git-scm.com/docs/git-cherry-pick
 
