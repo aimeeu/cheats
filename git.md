@@ -175,6 +175,31 @@ Switched to a new branch 'aimeeu-1.16-cherrypick-pr16531'
 
 ## Cherry pick
 
+### HashiCorp
+
+Find and copy commit
+
+```
+git main pull
+git log
+```
+
+Check out branch to cherry pick commit to and create local copy
+
+```
+git checkout release/1.18.x
+git checkout -b backport release/1.18.x
+```
+
+Cherry pick
+
+```
+git cherry-pick <commit-number>
+```
+
+
+### K8s
+
 https://git-scm.com/docs/git-cherry-pick
 
 Note: using ```git cherry-pick --edit <hash>``` will enable you to edit the commit message
