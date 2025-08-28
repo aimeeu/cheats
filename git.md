@@ -124,6 +124,31 @@ another option is just to do:
 git checkout matrix/pcm-v1-clouddriver
 git merge master
 ```
+
+## Revert a merge commit
+This reverts a merge commit to the commit before the merge, but leaves the merge commit in the commit history. 
+
+```shell
+git log
+git revert -m 1 <merge_commit>
+git push origin <branch>
+```
+
+If you push a bad merge commit to the remote branch and want to remove it entirely, you need to do a hard reset. This alters the commit history.
+
+Find the commit before the bad one.
+
+```shell
+git log
+```
+
+Then do a hard reset and push.
+
+```shell
+git reset --hard <commit to reset to>
+git push --force origin <branch>
+```
+
 # Cherry Pick
 
 ## HashiCorp
