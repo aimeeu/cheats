@@ -25,3 +25,13 @@
 
 > [!NOTE]
 > This is a note
+
+> [!IMPORTANT]
+> This is important
+
+ ---
+
+This is a numbered list. GH understands using "1." for all list items and renders appropriately.
+1. one
+1. two
+1. three
