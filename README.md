@@ -22,3 +22,6 @@
 # cheats
 - k8s-contrib
 - github
+
+> [!NOTE]
+> This is a note
