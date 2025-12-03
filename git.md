@@ -28,6 +28,7 @@ https://github.com/Gazler/githug
  - ``git clone --single-branch --branch <branchname> <remote-repo>``
 
 ## Mirror single branch
+
 - `git clone --bare --single-branch --branch master git@github.com:<user>/<repo>.git`
 - `git push --mirror git@github.com:<user>/<new-repo>.git`
 
@@ -57,6 +58,18 @@ git push -u origin ce805
 # The -u flag ensures that myFeature is created in our remote repository and linked to our local myFeature branch.
 ```
 https://www.geeksforgeeks.org/git-create-a-branch-from-another-branch/
+
+OR
+
+```
+git checkout -b <new-local-branch-name> origin/<remote-branch-name>
+```
+
+Example
+
+```
+git checkout -b aimeeu-ce1089-relNotes origin/nomad/1.11.1
+```
 
 ## Rename
 
