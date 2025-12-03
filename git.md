@@ -88,6 +88,15 @@ If you are on a different branch: `git branch -m old-name new-name`
 - ```git branch -d <branch_name>``` The -d option is an alias for --delete, which only deletes the branch if it has already been fully merged in its upstream branch
 - ``` git branch -D <branch_name>``` You could also use -D, which is an alias for --delete --force, which deletes the branch "irrespective of its merged status."
 - ```git push <remote_name> --delete <branch_name>``` to delete a remote branch
+
+## Prune
+
+After deleting a remote branch, you might also want to prune your local remote-tracking branches to reflect the changes on the remote. 
+
+```
+git fetch origin --prune
+```
+
 # File
 https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting
 
